@@ -14,9 +14,9 @@ const Container = () => {
       .filter((word) => word.length > 0); //filter(word => word.length > 0) removes any empty strings from the array.
     return words.length;
   };
-  const calculateInstagramWord = () => {
-    const remainWord = 280 - text.length;
-    return remainWord;
+  const calculateRemainWord = (num) => {
+    const remainWord = num - text.length;
+    return remainWord >= 0 ? remainWord : "Out of limit";
   };
 
   return (
@@ -27,7 +27,7 @@ const Container = () => {
           setText,
           numberOfCharacter,
           calculateWords,
-          calculateInstagramWord,
+          calculateRemainWord,
         }}
       >
         <main className="container">

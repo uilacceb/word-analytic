@@ -2,24 +2,16 @@ import { useContext } from "react";
 import { wordStats } from "./Container";
 
 const Stats = () => {
-  const { numberOfCharacter, calculateWords, calculateInstagramWord } =
+  const { numberOfCharacter, calculateWords, calculateRemainWord } =
     useContext(wordStats);
 
-  const validateIns = () => {
-    const number = calculateInstagramWord();
-    if (number >= 0) {
-      return number;
-    } else {
-      return "Out of limit";
-    }
-  };
   return (
     <>
       <section className="stats">
         <Stat number={calculateWords()} label="Words" />
         <Stat number={numberOfCharacter} label="Characters" />
-        <Stat number={validateIns()} label="Instagram" />
-        <Stat number={2200} label="Facebook" />
+        <Stat number={calculateRemainWord(280)} label="Instagram" />
+        <Stat number={calculateRemainWord(2200)} label="Facebook" />
       </section>
     </>
   );
