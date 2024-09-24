@@ -8,7 +8,7 @@ const Container = () => {
   const [text, setText] = useState("");
   const numberOfCharacter = text.length;
   const calculateWords = () => {
-    const words = text.trim().split(" ").filter(word => word.length > 0);//filter(word => word.length > 0) removes any empty strings from the array.
+    const words = text.trim().split(/\s+/).filter(word => word.length > 0);//filter(word => word.length > 0) removes any empty strings from the array.
     return words.length;
   };
 
