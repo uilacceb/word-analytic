@@ -4,12 +4,21 @@ import { wordStats } from "./Container";
 const Stats = () => {
   const { numberOfCharacter, calculateWords, calculateInstagramWord } =
     useContext(wordStats);
+
+  const validateIns = () => {
+    const number = calculateInstagramWord();
+    if (number >= 0) {
+      return number;
+    } else {
+      return "Out of limit";
+    }
+  };
   return (
     <>
       <section className="stats">
         <Stat number={calculateWords()} label="Words" />
         <Stat number={numberOfCharacter} label="Characters" />
-        <Stat number={calculateInstagramWord()} label="Instagram" />
+        <Stat number={validateIns()} label="Instagram" />
         <Stat number={2200} label="Facebook" />
       </section>
     </>

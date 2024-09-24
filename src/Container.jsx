@@ -16,11 +16,7 @@ const Container = () => {
   };
   const calculateInstagramWord = () => {
     const remainWord = 280 - text.length;
-     if(remainWord >= 0) {
-      return remainWord
-    }else{
-      return 0;
-    }
+    return remainWord;
   };
 
   return (
