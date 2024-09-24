@@ -7,10 +7,16 @@ export const wordStats = createContext("");
 const Container = () => {
   const [text, setText] = useState("");
   const numberOfCharacter = text.length;
+  const calculateWords = () => {
+    const words = text.trim().split(" ").filter(word => word.length > 0);//filter(word => word.length > 0) removes any empty strings from the array.
+    return words.length;
+  };
 
   return (
     <>
-      <wordStats.Provider value={{ text, setText, numberOfCharacter }}>
+      <wordStats.Provider
+        value={{ text, setText, numberOfCharacter, calculateWords }}
+      >
         <main className="container">
           <Textarea />
           <Stats />

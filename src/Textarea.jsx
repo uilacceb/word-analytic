@@ -6,6 +6,9 @@ const Textarea = () => {
   const [warning, setWarning] = useState("");
   const { text, setText } = useContext(wordStats);
 
+
+
+
   const handleChange = (e) => {
     let newText = e.target.value;
     if (newText.includes("<script>")) {
