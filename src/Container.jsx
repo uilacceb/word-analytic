@@ -11,7 +11,7 @@ const Container = () => {
     const words = text
       .trim()
       .split(/\s+/)
-      .filter((word) => word.length > 0); //filter(word => word.length > 0) removes any empty strings from the array.
+      .filter((word) => word !== ""); //or filter(word => word.length > 0) removes any empty strings from the array.
     return words.length;
   };
   const calculateRemainWord = (num) => {
